@@ -1,0 +1,30 @@
+{% extends 'layout.html' %} 
+
+{% block title %} Form CRUD {% endblock %}
+
+{% block content %}
+	<h2>Form Update Data</h2>
+	<form method="POST">
+		<table>
+			<tr>
+				<td><label>NIM</label></td>
+				<td><input type="text" name="nim" value="{{ data.nim }}" disabled /></td>
+			</tr>
+			<tr>
+				<td><label>Nama</label></td>
+				<td><input type="text" name="nama" value="{{ data.nama }}" /></td>
+			</tr>
+			<tr>
+				<td><label>Alamat</label></td>
+				<td><textarea name="alamat">{{ data.alamat }}</textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Submit" /></td>
+			</tr>
+		</table>
+
+		<br/>
+		<a href="/">Back</a>
+	</form>
+{% endblock %}
