@@ -21,7 +21,8 @@
 				<td>{{ d.nama }}</td>
 				<td>{{ d.alamat }}</td>
 				<td>
-					<a href="/update/{{ d.nim }}">update</a>
+					<a href="/update/{{ d.nim }}">Update</a> || 
+					<a href="/delete/{{ d.nim }}" onclick="return confirm("Kamu yakin ?")">Delete</a>
 				</td>
 			</tr>
 			{% endfor %}

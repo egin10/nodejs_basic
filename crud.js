@@ -96,14 +96,14 @@ routes.addRoute('/update/:id', function(req, res){
 });
 
 //delete data from database
-routes.addRoute('/delete', function(req, res){
+routes.addRoute('/delete/:id', function(req, res){
 	connection.query("delete from mhs where ?", {
-		nim : "14615030"
+		nim : this.params.id
 	},function(err, fields){
 		if(err) throw err;
 
-		res.writeHead(200, {"Content-Type":"text/plain"});
-		res.end(fields.affectedRows + " Rows Deleted");
+		res.writeHead(302, {"Location":"/"});
+		res.end();
 	});
 });
 
